@@ -1,0 +1,76 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;1,200&display=swap');
+
+.service-container {
+    height: 150vh;
+    background-color: whitesmoke;
+}
+
+.service-head {
+    border-top: 10vh solid transparent;
+    display: flex;
+    justify-content: space-around;
+}
+
+.service-head h4 {
+    font-size: 2rem;
+    font-family: 'Nunito', sans-serif;
+    color: rgb(243, 78, 78);
+    font-weight: bold;
+}
+
+.service-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    height: 80%;
+    column-gap: 2px;
+    row-gap: 10px;
+    padding: 10px;
+}
+
+.service-card-container {
+    max-height: 350px;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.service-card {
+    width: 75%;
+    text-align: center;
+    background-color: white;
+    font-family: 'Nunito', sans-serif;
+    transition: transform 0.5s ease-in-out;
+    box-shadow: 2px 2px 2px 2px grey;
+}
+
+.service-card:hover {
+    margin: -2px 0px 2px 0px;
+}
+
+.card-header {
+    height: 20%;
+}
+
+.card-body {
+    height: 65%;
+}
+
+.card-btn {
+    height: 15%;
+}
+
+@media screen and (max-width: 1044px) {
+    .service-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media screen and (max-width: 677px) {
+    .service-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .service-card {
+        width: 50%;
+    }
+}
