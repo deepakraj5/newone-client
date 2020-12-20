@@ -96,3 +96,34 @@
         }
     }
 }
+
+.home-container {
+    height: 100vh;
+
+    .home-header {
+        border: 1px solid black;
+        height: 8vh;
+        background-color: green;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+    }
+
+    .home-body {
+        border: 1px solid black;
+        height: 92vh;
+        background-color: grey;
+        display: grid;
+        grid-template-columns: 250px 1fr;
+        column-gap: 2px;
+
+        .appbar {
+            border: 1px solid yellow;
+            height: 100%;
+        }
+
+        .content {
+            border: 1px solid white;
+        }
+    }
+}

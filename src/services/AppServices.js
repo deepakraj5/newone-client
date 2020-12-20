@@ -1,4 +1,5 @@
 import axios from 'axios'
+import authHeader from './AuthHeader'
 
 const baseUrl = 'http://localhost:3001'
 
@@ -10,6 +11,12 @@ class AppServices {
 
     teacherSignin(username, password) {
         return axios.post(baseUrl + '/teacher/signin', { username, password })
+    }
+
+    teacherProfile() {
+        return axios.get(baseUrl + '/profile', {
+            headers: authHeader()
+        })
     }
 }
 
