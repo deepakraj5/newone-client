@@ -19,7 +19,7 @@ const AppRouter = () => {
                     <Route path='/teacherauth' component={TeacherAuth} />
                     <Route path='/student' component={Student} />
                     <Route path='/tsignup' component={TeacherSignup} />
-                    <Route path='/teacher/home' component={TeacherClasses} />
+                    <Route path='/teacher/home' component={TeacherClasses} exact={true} />
                     <Route path="/teacher/newclass" component={TeacherNewClass} />
                     <Route path="/teacher/joinclass" component={TeacherJoinClass} />
                     <Route path="/teacher/profile" component={TeacherProfile} />

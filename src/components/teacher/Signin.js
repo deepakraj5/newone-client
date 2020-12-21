@@ -16,7 +16,7 @@ const Signin = (props) => {
     const handleSignin = () => {
         AppService.teacherSignin(username, password).then((res) => {
             cookie.set('jwt_token', res.data.token, { path: '/' })
-            histoy.push('/teacherhome')
+            histoy.push('/teacher/home')
         }).catch((error) => {
             console.log(error.response.data)
         })

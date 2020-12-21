@@ -1,4 +1,5 @@
 import React from 'react'
+import { NavLink } from 'react-router-dom'
 import '../../styles/teacher.scss'
 
 const AppBar = () => {
@@ -6,11 +7,11 @@ const AppBar = () => {
         <div>
             <div className="appbar">
 
-                <h4>Classes</h4>
-                <h4>Create New Class</h4>
-                <h4>Join Class</h4>
-                <h4>Profile</h4>
-                <h4>Settings</h4>
+                <NavLink to="/teacher/home" className="appbar-nav" activeClassName="appbar-nav-active">Classes</NavLink>
+                <NavLink to="/teacher/newclass" className="appbar-nav" activeClassName="appbar-nav-active">Create New Class</NavLink>
+                <NavLink to="/teacher/joinclass" className="appbar-nav" activeClassName="appbar-nav-active">Join Class</NavLink>
+                <NavLink to="/teacher/profile" className="appbar-nav" activeClassName="appbar-nav-active">Profile</NavLink>
+                <NavLink to="/teacher/settings" className="appbar-nav" activeClassName="appbar-nav-active">Settings</NavLink>
 
             </div>
         </div>
