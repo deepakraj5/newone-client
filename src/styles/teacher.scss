@@ -16,6 +16,7 @@
     height: 50%;
     text-align: center;
     box-shadow: 2px 2px 2px 2px rgb(44, 38, 38);
+    animation: signinTop ease-in 0.5s;
 
     form {
         height: 60%;
@@ -36,6 +37,11 @@
         text-align: center;
         height: 10%;
     }
+}
+
+@keyframes signinTop {
+    from {transform: rotateY(90deg);}
+    to {transform: rotateY(0deg);}
 }
 
 .teacher-signup-container {
@@ -135,6 +141,20 @@
 
         .content {
             background-color: white;
+
+            .newclass-form-container {
+                display: flex;
+                justify-content: space-around;
+                align-items: center;
+                height: 92vh;
+                width: 100%;
+            }
+
+            .newclass-form {
+                box-shadow: 1.5px 1.5px 1.5px 1.5px;
+                height: 230px;
+                background-color: rgb(235, 234, 245);
+            }
         }
     }
 }

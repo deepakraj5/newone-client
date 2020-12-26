@@ -1,6 +1,7 @@
 import React from 'react'
 import '../../styles/teacher.scss'
 import AppBar from './AppBar'
+import ClassCard from './ClassCard'
 
 const Classes = () => {
     return (
@@ -13,10 +14,8 @@ const Classes = () => {
             <div className="home-body">
 
                 <AppBar />
-
-                <div className="content">
-                    classes
-                </div>
+                
+                <ClassCard />
 
             </div>
 

@@ -1,8 +1,31 @@
-import React from 'react'
+import React, { useState } from 'react'
+import { SnackbarProvider, useSnackbar } from 'notistack'
 import '../../styles/teacher.scss'
 import AppBar from './AppBar'
+import CreateClass from './NewClass.CreateClass'
+import AppServices from '../../services/AppServices'
 
-const NewClass = () => {
+const _NewClass = () => {
+
+    const [className, setClassName] = useState('')
+    const [subjectName, setSubjectName] = useState('')
+
+    const { enqueueSnackbar } = useSnackbar()
+
+    const handleCreateClass = async () => {
+        console.log(className, subjectName)
+
+        try {
+            let newClass = await AppServices.createClass(className, subjectName)
+            enqueueSnackbar(newClass.data.message, {
+                variant: 'info'
+            })
+        } catch (e) {
+            console.log(e)
+        }
+
+    }
+
     return (
         <div className="home-container">
 
@@ -14,9 +37,13 @@ const NewClass = () => {
 
                 <AppBar />
 
-                <div className="content">
-                    new class
-                </div>
+                <CreateClass 
+                    handleCreateClass={handleCreateClass} 
+                    className={className} 
+                    subjectName={subjectName} 
+                    setClassName={setClassName}
+                    setSubjectName={setSubjectName}
+                />
 
             </div>
 
@@ -24,4 +51,16 @@ const NewClass = () => {
     );
 }
 
-export default NewClass
+export default function NewClass () {
+    return (
+        <SnackbarProvider 
+            maxSnack={4}
+            anchorOrigin={{
+                horizontal: 'right',
+                vertical: 'top'
+            }}
+        >
+            <_NewClass />
+        </SnackbarProvider>
+    );
+}

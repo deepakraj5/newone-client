@@ -1,0 +1,104 @@
+.student-container {
+    height: 100vh;
+    background: linear-gradient(-45deg,blue 50%, skyblue 40%, grey 40%, white 50%);
+}
+
+.student-login-box {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.s-signin {
+    background-color: whitesmoke;
+    width: 350px;
+    height: 50%;
+    text-align: center;
+    box-shadow: 2px 2px 2px 2px rgb(44, 38, 38);
+    animation: signinTop ease-in 0.5s;
+
+    form {
+        height: 60%;
+    }
+
+    .text-filed {
+        margin-top: 20px;
+    }
+
+    h4 {
+        height: 20%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .btn {
+        text-align: center;
+        height: 10%;
+    }
+}
+
+@keyframes signinTop {
+    from {transform: rotateY(90deg);}
+    to {transform: rotateY(0deg);}
+}
+
+.student-signup-container {
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    background: black;
+
+    .signup-photo-grid {
+        background-image: url('../images/teacher-signup.jpg');
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+
+        h4 {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            color: white;
+            background: rgba(0, 0, 0, 0.45);
+            font-size: 2rem;
+        }
+    }
+
+    .signup-content-grid {
+        background: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        td {
+            padding: 20px;
+        }
+
+        .student-form {
+            width: 15rem;
+        }
+    }
+
+    @media screen and (max-width: 834px) {
+        .signup-content-grid {
+            display: block;
+        }
+    }
+}
+
+@media screen and (max-width: 925px) {
+    .student-signup-container {
+        display: block;
+
+        .signup-photo-grid {
+            display: none;
+        }
+
+        .signup-content-grid {
+            height: 100vh;
+        }
+    }
+}
